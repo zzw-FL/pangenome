@@ -1,4 +1,4 @@
-# Rice pan-genome analysis workflows
+# Pangenome analysis workflows
 
 Curated workflow scripts from the cluster `Ricepan` project directory.
 

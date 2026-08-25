@@ -3,22 +3,22 @@
 use strict;
 use warnings;
 
-# 检查命令行参数是否提供了输入文件名
+# Check that an input file was provided
 if (@ARGV != 1) {
-    die "用法：perl script.pl <输入文件名>\n";
+    die "Usage: perl script.pl <input_file>\n";
 }
 
-my $input_file = $ARGV[0]; # 获取输入文件名
+my $input_file = $ARGV[0]; # Get the input file name
 
-# 打开输入文件进行读取
-open(my $input_fh, '<', $input_file) or die "无法打开 $input_file: $!";
+# Open the input file
+open(my $input_fh, '<', $input_file) or die "Cannot open $input_file: $!";
 
-# 逐行读取文件内容
+# Read the file line by line
 while (my $line = <$input_fh>) {
     chomp $line;
-    my @columns = split(/\s+/, $line);  # 假设列之间使用空格分隔，可以根据实际情况修改分隔符
+    my @columns = split(/\s+/, $line);  # Whitespace-delimited columns
 
-    # 处理第三列
+    # Process column 3
     my @col3_parts = split(/,/, $columns[2]);
     my $max_char_count_col3 = 0;
     foreach my $part (@col3_parts) {
@@ -26,7 +26,7 @@ while (my $line = <$input_fh>) {
         $max_char_count_col3 = $char_count_col3 if $char_count_col3 > $max_char_count_col3;
     }
 
-    # 处理第四列
+    # Process column 4
     my @col4_parts = split(/,/, $columns[3]);
     my $max_char_count_col4 = 0;
     foreach my $part (@col4_parts) {
@@ -37,5 +37,5 @@ while (my $line = <$input_fh>) {
     print "$max_char_count_col3\t$max_char_count_col4\n";
 }
 
-# 关闭输入文件
+# Close the input file
 close($input_fh);

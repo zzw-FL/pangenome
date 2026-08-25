@@ -1,0 +1,1 @@
+/TOOLS/vcftools-0.1.16/bin/vcftools --gzvcf /DATA/SAMPLE/03.GATK/07.filter/02.filtersnp/chr0.hardfiltered.snp.vcf.gz --max-missing 0.9 --maf 0.1 --recode --recode-INFO-all  --stdout|/TOOLS/01.software/smcpp1.13.1/bin/bgzip -c > /DATA/SAMPLE/03.GATK/07.filter/02.filtersnp/SAMPLE_maffilter.vcf.gz

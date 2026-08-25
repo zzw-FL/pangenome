@@ -1,0 +1,1 @@
+perl /PIPELINES/DNA/DNA_annotation/Annotation_2021/bin/Auto_pipline/auto_fun_ann/auto_fun_ann_2020.pl -queue st.q -pro_code PROJECT -Interpro  -KEGG -Swissprot -Trembl -KOG  -GO -NR -species plant -iresource vf=8G,num_proc=1 -cuts 500 -cpu 200 -new_nr /DATA/USER/LettuceSV/03.lettuceSV_SAMPLE/09.select_function/SAMPLE/SAMPLE.pep.fa 
